@@ -1,11 +1,149 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro'
+import WorkCard from '../components/WorkCard.astro'
+import { works } from '../data/works'
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfnbia2c5XY3jD4LgkOJNX1SqnefnIKxJ2vx4Wj-SDLHZTcHw/viewform'
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout
+  title="Creative Team Eden"
+  description="Creative Team Eden is a small creative team for web development and design."
+>
+  <div class="eden-page">
+    <section class="intro-section" aria-labelledby="intro-title">
+      <div class="intro-card">
+        <div class="intro-card__lead">
+          <p id="intro-title">
+            作り続けているものがある。
+          </p>
+          <p>届けられない思いがある。</p>
+          <p>私たちは、作品と社会をつなぐ接点を作ります。</p>
+        </div>
+
+        <div class="intro-card__body">
+          <p>
+            『エデン』は、作品や事業に宿る「熱狂」を社会に届けるクリエイティブチームです。
+          </p>
+          <p>
+            届けたい思いがある。けれど、それをどう発信し、どう届け、
+            どう機会につなげればいいのか分からない。
+          </p>
+          <p>
+            私たちは、デザインとエンジニアリングの力で、作品と社会をつなぐ接点を作ります。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="readme-section" aria-labelledby="readme-title">
+      <h2 id="readme-title" class="section-title" data-kicker="Profile">
+        <span>README</span>
+      </h2>
+
+      <article class="member-panel" aria-labelledby="profile-title">
+        <div class="member-summary">
+          <figure class="member-icon">
+            <img
+              src="/shinri.png"
+              alt="前城真理のアバターイラスト"
+              width="512"
+              height="512"
+              loading="eager"
+            />
+          </figure>
+
+          <section class="member-about" aria-labelledby="about-title">
+            <h3 id="about-title">About</h3>
+            <p class="member-about-description">前城真理 / エンジニア / 1997年生まれ / 沖縄</p>
+            <p class="member-about-body">
+              制作会社でエンジニアとディレクターを経験し、現在はフルリモートで物流倉庫業務を支援するサービスの開発に従事。
+              直近は、ロボット輸入会社のWordPressリニューアル案件で、
+              React SPA と独自プラグインを連携し、REST API経由でシリアル認証を行う仕組みを開発。
+              独自DBテーブルの設計、認証API、管理画面での登録・一覧表示、CSVインポートなど、運用に必要な周辺機能の実装も可能。
+            </p>
+          </section>
+        </div>
+      </article>
+
+      <article
+        class="member-panel member-panel--baba"
+        aria-labelledby="motoko-profile-title"
+      >
+        <div class="member-summary">
+          <figure class="member-icon">
+            <img
+              src="/baba.png"
+              alt="馬場素子のアバターイラスト"
+              width="512"
+              height="512"
+              loading="lazy"
+            />
+          </figure>
+
+          <section class="member-about" aria-labelledby="motoko-about-title">
+            <h3 id="motoko-about-title">About</h3>
+            <p class="member-about-description">馬場素子 / デザイナー / プロデューサー / 女性</p>
+            <p class="member-about-body">
+              制作会社で様々なWebサイトのリニューアルを要件定義からリリース後の運用まで経験。
+              運用面ではアクセス解析を用いた分析をもとに、サービスのグロース戦略立案まで行ってきた。
+              現在は開発会社で物流倉庫業務を支援するサービスのUI / UX を含むデザイン全般の業務に従事。
+              また、プロデューサーも兼ねており、クライアントの課題解決に向けた企画立案から、予算・スケジュール管理、成果物のクオリティ管理まで幅広く対応可能。
+            </p>
+          </section>
+        </div>
+      </article>
+    </section>
+
+    <section class="eden-work" aria-labelledby="work-title">
+      <div class="work-section-header">
+        <h2 id="work-title" class="section-title" data-kicker="Portfolio">
+          <span>Work</span>
+        </h2>
+      </div>
+
+      <div class="eden-work-grid">
+        {works.map((work) => <WorkCard work={work} />)}
+      </div>
+    </section>
+
+    <section class="contact-section" aria-labelledby="contact-title">
+      <h2 id="contact-title" class="section-title" data-kicker="相談">
+        <span>Contact</span>
+      </h2>
+
+      <div class="contact-card">
+        <div class="contact-card__message">
+          <p class="contact-card__lead">本気のあなたへ。</p>
+          <p>
+            正式な依頼じゃなくても構いません。<br>まずはお気軽にご連絡ください。
+          </p>
+          <p>
+            作品と社会を繋ぐ接点を、一緒に考えます。
+          </p>
+          <a
+            class="contact-card__button"
+            href={GOOGLE_FORM_URL}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Googleフォームを別タブで開いて相談する"
+          >
+            相談してみる
+          </a>
+          <p class="contact-card__note">Googleフォームが別タブで開きます。</p>
+        </div>
+
+        <div class="contact-card__list" aria-labelledby="contact-list-title">
+          <h3 id="contact-list-title">相談できること</h3>
+          <ul>
+            <li>ポートフォリオサイトを作りたい</li>
+            <li>作品の見せ方を整理したい</li>
+            <li>活動内容を言葉にしたい</li>
+            <li>作品・SNS・販売に繋がる導線を整理したい</li>
+            <li>展示や制作実績をまとめたい</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

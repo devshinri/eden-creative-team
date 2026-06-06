@@ -1,0 +1,57 @@
+---
+import type { Work } from '../data/works'
+
+type Props = {
+  work: Work
+}
+
+const { work } = Astro.props
+const isLinked = Boolean(work.href)
+const imageFit = work.imageFit ?? 'cover'
+const imagePosition = work.imagePosition ?? 'center center'
+---
+
+<article class="eden-work-card" aria-labelledby={`work-${work.id}`}>
+  {
+    isLinked ? (
+      <a
+        class="eden-work-link"
+        href={work.href}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div class="eden-work-thumb">
+          <img
+            src={work.image}
+            alt={`${work.title} のサムネイル`}
+            width="520"
+            height="360"
+            loading="lazy"
+            style={`object-fit: ${imageFit}; object-position: ${imagePosition};`}
+          />
+        </div>
+
+        <div class="eden-work-body">
+          <h3 id={`work-${work.id}`}>{work.title}</h3>
+        </div>
+      </a>
+    ) : (
+      <div class="eden-work-link eden-work-link--static">
+        <div class="eden-work-thumb">
+          <img
+            src={work.image}
+            alt={`${work.title} のサムネイル`}
+            width="520"
+            height="360"
+            loading="lazy"
+            style={`object-fit: ${imageFit}; object-position: ${imagePosition};`}
+          />
+        </div>
+
+        <div class="eden-work-body">
+          <h3 id={`work-${work.id}`}>{work.title}</h3>
+        </div>
+      </div>
+    )
+  }
+</article>

@@ -1,0 +1,41 @@
+---
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import '../styles/global.css'
+
+type Props = {
+  title?: string
+  description?: string
+}
+
+const {
+  title = 'Shinri Maeshiro',
+  description = 'Frontend Engineer / Creative Developer',
+} = Astro.props
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="site-bg" aria-hidden="true">
+      <span class="site-bg__cloud site-bg__cloud--1"></span>
+      <span class="site-bg__cloud site-bg__cloud--2"></span>
+      <span class="site-bg__cloud site-bg__cloud--3"></span>
+      <span class="site-bg__cloud site-bg__cloud--4"></span>
+      <span class="site-bg__cloud site-bg__cloud--5"></span>
+    </div>
+    <div class="site-shell">
+      <Header />
+      <main>
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>
