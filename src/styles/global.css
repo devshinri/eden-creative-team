@@ -65,7 +65,7 @@ body {
       rgba(247, 244, 239, 0.22) 42%,
       rgba(241, 236, 228, 0.42) 100%
     ),
-    url("/background.png");
+    url("/background.webp");
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
@@ -134,7 +134,7 @@ body {
   border-radius: 10px;
   background:
     linear-gradient(rgba(255, 249, 238, 0.5), rgba(255, 249, 238, 0.5)),
-    url("/intro_back.png");
+    url("/intro_back.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -445,7 +445,7 @@ body {
   border-radius: 10px;
   background:
     linear-gradient(rgba(255, 247, 229, 0.78), rgba(255, 247, 229, 0.78)),
-    url("/readme_back.png");
+    url("/readme_back.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -459,7 +459,7 @@ body {
 .member-panel--baba {
   background:
     linear-gradient(rgba(255, 247, 229, 0.78), rgba(255, 247, 229, 0.78)),
-    url("/baba_back.png");
+    url("/baba_back.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -658,7 +658,7 @@ body {
         rgba(247, 244, 239, 0.22) 42%,
         rgba(241, 236, 228, 0.42) 100%
       ),
-      url("/background_sp.png");
+      url("/background_sp.webp");
   }
   .site-shell {
     width: min(100% - 24px, 1000px);
@@ -683,7 +683,7 @@ body {
     padding: 28px 22px;
     background:
       linear-gradient(rgba(255, 249, 238, 0.5), rgba(255, 249, 238, 0.5)),
-      url("/intro_back_sp.png");
+      url("/intro_back_sp.webp");
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
@@ -729,7 +729,7 @@ body {
   .member-panel {
     background:
       linear-gradient(rgba(255, 247, 229, 0.72), rgba(255, 247, 229, 0.72)),
-      url("/readme_back_sp.png");
+      url("/readme_back_sp.webp");
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
@@ -738,7 +738,7 @@ body {
   .member-panel--baba {
     background:
       linear-gradient(rgba(255, 247, 229, 0.72), rgba(255, 247, 229, 0.72)),
-      url("/baba_back_sp.png");
+      url("/baba_back_sp.webp");
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
