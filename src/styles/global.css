@@ -172,7 +172,7 @@ body {
 }
 
 .intro-card__lead::after {
-  content: "Creative Team Eden";
+  content: "Eden Creative Team";
   display: block;
   margin-top: 18px;
   color: rgba(191, 150, 96, 0.92);
